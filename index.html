@@ -1,0 +1,116 @@
+export default function BirthdayCard() {
+  return (
+    <div className="min-h-screen bg-black flex items-center justify-center p-6 overflow-hidden relative">
+      <style>{`
+        @keyframes cardBreathe {
+          0%, 100% { transform: scale(1); box-shadow: 0 0 80px rgba(212,175,55,0.18); }
+          50% { transform: scale(1.012); box-shadow: 0 0 115px rgba(212,175,55,0.28); }
+        }
+
+        @keyframes softGlow {
+          0%, 100% { opacity: 0.22; transform: scale(1); }
+          50% { opacity: 0.42; transform: scale(1.06); }
+        }
+
+        @keyframes cheers {
+          0%, 100% { transform: rotate(0deg) scale(1); }
+          35% { transform: rotate(-12deg) scale(1.14); }
+          55% { transform: rotate(10deg) scale(1.14); }
+          75% { transform: rotate(-4deg) scale(1.05); }
+        }
+
+        @keyframes goldFloat {
+          0%, 100% { transform: translateY(0); opacity: .65; }
+          50% { transform: translateY(-5px); opacity: 1; }
+        }
+
+        .birthday-card-breathe {
+          animation: cardBreathe 5.5s ease-in-out infinite;
+          transform-origin: center;
+        }
+
+        .soft-glow-breathe {
+          animation: softGlow 6s ease-in-out infinite;
+        }
+
+        .cheers-glasses {
+          display: inline-block;
+          transform-origin: center bottom;
+          animation: cheers 1.8s ease-in-out infinite;
+        }
+
+        .king-lion-float {
+          animation: goldFloat 3.8s ease-in-out infinite;
+        }
+      `}</style>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(212,175,55,0.25),transparent_45%)]" />
+
+      <div className="birthday-card-breathe relative w-full max-w-md rounded-[34px] border border-yellow-700/40 bg-gradient-to-br from-[#1a1408] via-black to-[#23190a] shadow-[0_0_80px_rgba(212,175,55,0.18)] overflow-hidden">
+        <div className="soft-glow-breathe absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_center,rgba(255,215,0,0.22),transparent_60%)]" />
+
+        <div className="relative z-10 p-8">
+          <div className="inline-flex items-center gap-3 px-5 py-3 rounded-full border border-yellow-700/40 bg-gradient-to-r from-[#4a2430] to-[#2a1d18] text-white font-semibold tracking-wide shadow-lg">
+            <span>🎂</span>
+            <span>Born To Be A Legend</span>
+            <span className="cheers-glasses">🥂</span>
+          </div>
+
+          <div className="mt-8 leading-none">
+            <h1 className="text-[68px] font-black tracking-[-4px] text-white">
+              Happy
+            </h1>
+            <h1 className="text-[68px] font-black tracking-[-4px] text-white -mt-2">
+              Birthday
+            </h1>
+
+            <div className="flex items-center gap-4 mt-3 mb-4 overflow-visible">
+              <h1 className="text-[72px] leading-[1.1] pb-2 font-black tracking-[-4px] bg-gradient-to-r from-[#7a5a12] via-[#d4af37] to-[#fff0a6] bg-clip-text text-transparent">
+                King
+              </h1>
+
+              <img
+                src="/mnt/data/1f9bfb37-0ee1-4473-80cc-f4c12ca112f8.png"
+                alt="Luxury Lion"
+                className="king-lion-float w-20 h-20 object-contain opacity-95 drop-shadow-[0_0_22px_rgba(212,175,55,0.45)]"
+              />
+            </div>
+          </div>
+
+          <p className="mt-6 text-xl text-white/90 font-medium leading-relaxed">
+            A whole vibe. A whole gentleman. A whole blessing. 🖤
+          </p>
+
+          <div className="mt-8 rounded-[28px] overflow-hidden border border-yellow-700/30 bg-black/50 backdrop-blur-md shadow-2xl">
+            <div className="relative">
+              <img
+                src="/mnt/data/b5a193ce-6f57-4578-8962-254a98b298c6.png"
+                alt="Golden Lion Background"
+                className="absolute inset-0 w-full h-full object-cover opacity-25"
+              />
+
+              <img
+                src="/mnt/data/file_00000000492c71f4af62144bb2e1b717.png"
+                alt="Birthday Portrait"
+                className="relative z-10 w-full object-cover"
+              />
+            </div>
+          </div>
+
+          <div className="mt-8 rounded-[24px] border border-yellow-700/20 bg-white/5 backdrop-blur-xl p-6 text-white/90 leading-relaxed">
+            <p className="text-lg">
+              Wishing you a year full of answered prayers, quiet wins, peace of mind, prosperity, and everything your heart has been working toward.
+            </p>
+
+            <div className="mt-5 text-sm uppercase tracking-[0.3em] text-yellow-500/80">
+              With Love
+            </div>
+
+            <div className="mt-1 text-2xl font-bold text-white">
+              Tatenda ✨
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
